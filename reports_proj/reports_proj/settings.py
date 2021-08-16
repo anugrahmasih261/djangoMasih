@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-w@f+(estg5880k7p)j7k%wb3y#dqvzu^u6&frpk2kkkv065mke
 #the above is changed to deploy on heroku
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','anugrahmasih.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','anugrahmasih1.herokuapp.com']
 
 
 # Application definition
