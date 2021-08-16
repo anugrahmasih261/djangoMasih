@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w@f+(estg5880k7p)j7k%wb3y#dqvzu^u6&frpk2kkkv065mke'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+#the above is changed to deploy on heroku
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','anugrahmasih.herokuapp.com']
 
 
 # Application definition
@@ -53,6 +55,8 @@ CRISPY_TEMPLATE_PACK= 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    #the below 1 line is added to deploy on heroku
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -133,9 +137,11 @@ LOGIN_URL='/login/'
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+#this is from stack overflow
+STATIC_ROOT = BASE_DIR/'static'
 #setting for static files
 STATICFILES_DIRS=[
-    BASE_DIR/ 'static',
+    #BASE_DIR/ 'static',
     BASE_DIR/ 'sales'/ 'static',
     BASE_DIR/ 'reports'/ 'static',
 ]
