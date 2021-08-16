@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+login
+{% endblock title %}
+
+{% block content %}
+
+{% if error_message %}
+<div class="alert alert-danger" role="alert">
+  {{error_message}}
+</div>
+{% endif %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <form action="" method="POST" class="p-3 border border-2">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button type="submit" class="btn btn-primary mt-3">Login</button>
+      </form>
+      <p>Not registered? Sinup</p>
+     <button  class="btn btn-primary mt-3"> <a href="http://127.0.0.1:8000/signup/">Signup </a> </button>
+      <br></br>
+      Forgot Password <a href="{% url 'reset_password' %}"> Reset</a>
+
+    </div>
+    <div class="col-6">
+      news
+      <br>
+      updates
+    </div>
+
+  </div>
+</div>
+
+<style>
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+{% endblock content %}
