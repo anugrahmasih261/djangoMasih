@@ -1,5 +1,7 @@
-# djangoMasih
+# djan
+goMasih
 final deploy
+FOR BETTER EXPERIENCE KINDLY USE LAPTOP
 Hii everyone finally after a year since i am here on git hub this is my final deployment of my first Django app
 I am really happy today 
 Use bellow link or url to acess my project
