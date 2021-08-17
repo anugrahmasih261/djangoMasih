@@ -1,6 +1,11 @@
 from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
+#these are imported for below new url
+from django.views.static import serve
+from django.conf.urls import url
+
+from ..reports_proj import settings
 
 urlpatterns = [
     #here i had to close 1 path to account because it takes to another paths and i have changed the login fun name
@@ -15,6 +20,11 @@ urlpatterns = [
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='app2/password_reset_done.html'),
          name='password_reset_complete'),
     #path('reset_password/', auth_views.PasswordResetView.as_view()),
+    #these url is added to deploy on heroku
+
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+
 ]
 
 
