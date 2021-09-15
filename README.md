@@ -1,4 +1,4 @@
-# djan
+# django
 goMasih
 final deploy
 FOR BETTER EXPERIENCE KINDLY USE LAPTOP
